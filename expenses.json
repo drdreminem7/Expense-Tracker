@@ -4,5 +4,17 @@
         "category": "Food",
         "amount": 15.5,
         "description": "Lunch"
+    },
+    {
+        "date": "2026-08-11",
+        "category": "Software",
+        "amount": 150.0,
+        "description": "Studying"
+    },
+    {
+        "date": "2026-08-11",
+        "category": "Clothes",
+        "amount": 80.0,
+        "description": "Shirt"
     }
 ]

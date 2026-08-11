@@ -47,6 +47,15 @@ def monthly_total():
     else:
         print(f"Monthly total for {month}: {total:.2f}")
 
+def filter_by_category(category):
+    filtered = [expense for expense in expenses if expense.category.lower() == category.lower()]
+    print("Expenses filtered by category: " + category)
+    print(f"{"ID":<2} | {"Date":<10} | {"Category":<12} | {"Amount":<8} | {"Description":<20}")
+    print("-" * 56)
+    for i, expense in enumerate(filtered, start=1):
+        print(f"{i:<2} | {expense.date:<10} | {expense.category:<12} | {expense.amount:<8} | {expense.description:<20}")
+    print("\n")
+
 def main():
     print("Expense Tracker\n")
 
@@ -56,7 +65,8 @@ def main():
         print("3. Delete Expense")
         print("4. Monthly Total")
         print("5. Export to CSV")
-        print("6. Exit\n")
+        print("6. Filter by Category")
+        print("7. Exit\n")
         choice = input("Choose: ")
         match choice:
             case "1":
@@ -71,6 +81,8 @@ def main():
                 export_to_csv([expense.to_dict() for expense in expenses])
                 print("Expenses exported to expenses.csv")
             case "6":
+                filter_by_category(get_non_empty_string("category"))
+            case "7":
                 print("Goodbye!")
                 break
             case _:

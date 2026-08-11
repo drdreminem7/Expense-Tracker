@@ -1,10 +1,15 @@
-import os
+import os, logging
 from utils import get_valid_float, get_non_empty_string, get_valid_date, get_valid_id, get_valid_month
 from storage import load_expenses, save_expenses, export_to_csv
 from models import Expense
 
 app_env = os.getenv("APP_ENV", "production")
 print("Running in " + app_env + " mode.")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s: %(message)s"
+)
 
 expenses = [Expense(**expense) for expense in load_expenses()]
 # Lets see what we have in the expenses list
@@ -19,6 +24,7 @@ def add_expense():
     expenses.append(Expense(date, category, amount, description))
     save_expenses([expense.to_dict() for expense in expenses])
     print("Done adding expense.")
+    logging.info("Added expense: %s", Expense(date, category, amount, description))
 
 def list_expenses():
     print(f"{"ID":<2} | {"Date":<10} | {"Category":<12} | {"Amount":<8} | {"Description":<20}")

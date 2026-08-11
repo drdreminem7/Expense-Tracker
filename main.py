@@ -57,6 +57,20 @@ def filter_by_category(category):
         print(f"{i:<2} | {expense.date:<10} | {expense.category:<12} | {expense.amount:<8} | {expense.description:<20}")
     print("\n")
 
+def summarize_by_month(expenses):
+    monthly_totals = {}
+
+    for expense in expenses:
+        month = expense["date"][:7]  # "2026-08-11" -> "2026-08"
+        amount = float(expense["amount"])
+
+        if month not in monthly_totals:
+            monthly_totals[month] = 0
+
+        monthly_totals[month] += amount
+
+    return monthly_totals
+
 def main():
     print("Expense Tracker\n")
 

@@ -161,3 +161,5 @@ Possible future improvements:
 - Better date handling
 - Command-line arguments
 - Package the app as an installable CLI tool
+
+Cool

@@ -162,4 +162,8 @@ Possible future improvements:
 - Command-line arguments
 - Package the app as an installable CLI tool
 
-Cool
+## How to Run
+
+```bash
+./run.sh
+```

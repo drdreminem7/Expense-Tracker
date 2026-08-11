@@ -1,6 +1,9 @@
+import os
 from utils import get_valid_float, get_non_empty_string, get_valid_date, get_valid_id, get_valid_month
 from storage import load_expenses, save_expenses, export_to_csv
 from models import Expense
+
+app_env = os.getenv("APP_ENV", "production")
 
 expenses = [Expense(**expense) for expense in load_expenses()]
 # Lets see what we have in the expenses list

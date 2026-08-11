@@ -4,6 +4,7 @@ from storage import load_expenses, save_expenses, export_to_csv
 from models import Expense
 
 app_env = os.getenv("APP_ENV", "production")
+print("Running in " + app_env + " mode.")
 
 expenses = [Expense(**expense) for expense in load_expenses()]
 # Lets see what we have in the expenses list

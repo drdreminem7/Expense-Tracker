@@ -4,6 +4,7 @@ from models import Expense
 
 expenses = [Expense(**expense) for expense in load_expenses()]
 # Lets see what we have in the expenses list
+# More comments to explain the code
 
 def add_expense():
     print("Adding an expense:")

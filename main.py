@@ -3,7 +3,7 @@ from storage import load_expenses, save_expenses, export_to_csv
 from models import Expense
 
 expenses = [Expense(**expense) for expense in load_expenses()]
-# Lets see
+# Lets see what we have in the expenses list
 
 def add_expense():
     print("Adding an expense:")

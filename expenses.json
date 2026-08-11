@@ -16,5 +16,11 @@
         "category": "Clothes",
         "amount": 80.0,
         "description": "Shirt"
+    },
+    {
+        "date": "2026-08-11",
+        "category": "Software",
+        "amount": 3400.0,
+        "description": "Laptop"
     }
 ]
